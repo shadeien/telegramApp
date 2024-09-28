@@ -25,11 +25,12 @@ telegram mini app init guide
 	- 上传一个demo的git图片演示介绍, 可以输入/empty跳过
 	- 输入web app的url, 我们部署的前端服务链接
 - app创建成功
+![](https://github.com/shadeien/telegramApp/blob/main/img/createapp.png?raw=true) 
 
 - 输入 /setmenubutton, 可以对机器人进行menu button设置
-![](https://github.com/shadeien/telegramApp/blob/main/img/setmenubutton.png?raw=true) 
-
-
+![](https://github.com/shadeien/telegramApp/blob/main/img/setMenuButton.png?raw=true) 
+![](https://github.com/shadeien/telegramApp/blob/main/img/botdetail.png?raw=true) 
+![](https://github.com/shadeien/telegramApp/blob/main/img/botdetail2.png?raw=true) 
 
 - [非必须]有需要修改的app信息的时候输入 /editapp, 按照提示修改
 - [非必须]输入 /myapps, 可以查询我们创建的app
