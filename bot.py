@@ -18,6 +18,9 @@ logging.getLogger("httpx").setLevel(logging.WARNING)
 
 logger = logging.getLogger(__name__)
 
+turl = "https://t.me/shadeienbot/bigdream"
+url = "https://s3.us-west-2.amazonaws.com/tma-front-dev.cudis.xyz/beanbit/index.html"
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     print(str(update))
     
@@ -27,13 +30,13 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     
     print(message.chat.type)
     if message.chat.type != ChatType.PRIVATE :
-        reply_markup = InlineKeyboardMarkup.from_button(InlineKeyboardButton("start game", url="https://t.me/shadeienbot/bigdream"))
+        reply_markup = InlineKeyboardMarkup.from_button(InlineKeyboardButton("start game", url=turl))
         await context.bot.send_message(
             chat_id=chat_id, text="hello, "+member.first_name, reply_markup=reply_markup, disable_notification=True
         )
     else :
         print("web_app")
-        reply_markup = InlineKeyboardMarkup.from_button(InlineKeyboardButton("start game", web_app=WebAppInfo(url="https://s3.us-west-2.amazonaws.com/tma-front-dev.cudis.xyz/beanbit/index.html")))
+        reply_markup = InlineKeyboardMarkup.from_button(InlineKeyboardButton("start game", web_app=WebAppInfo(url=url)))
         await update.message.reply_text("start", reply_markup=reply_markup)
         
 
@@ -79,22 +82,20 @@ async def message_handler2(update: Update, context: ContextTypes.DEFAULT_TYPE) -
         chat_id=chat_id, text=message.text, parse_mode=ParseMode.HTML
     )
 
-async def message_handler3(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
+async def message_handler3(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Displays info on how to use the bot."""
-    update_str = update.to_dict() if isinstance(update, Update) else str(update)
-    print(update_str)
     message = update.message
-    member = message.new_chat_members
+    members = message.new_chat_members
     chat_id = message.chat.id
 
-    keyboard = [
-        [InlineKeyboardButton("start game", web_app=WebAppInfo(url="https://s3.us-west-2.amazonaws.com/tma-front-dev.cudis.xyz/beanbit/index.html"))],
-    ]
+    names = ""
+    for member in members:
+        names += member.first_name + ","
 
-    reply_markup = InlineKeyboardMarkup(keyboard)
+    reply_markup = InlineKeyboardMarkup.from_button(InlineKeyboardButton("start game", url=turl))
 
     await context.bot.send_message(
-        chat_id=chat_id, text="hello, "+member.first_name, reply_markup=reply_markup
+        chat_id=chat_id, text="hello, "+names, reply_markup=reply_markup
     )
 
 def main() -> None:
