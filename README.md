@@ -7,6 +7,9 @@ telegram mini app init guide
 ![](https://github.com/shadeien/telegramApp/blob/main/img/queryId.png?raw=true)  
 机器人俩面的menu菜单进入，无法拿到queryId
 
+## bot.py说明
+通过/start命令启动机器人回复开启app的信息
+
 ## 创建机器人
 
 - 在telegram中搜索BotFather, 并且打开聊天窗口
