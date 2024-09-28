@@ -1,6 +1,11 @@
 # telegramApp
 telegram mini app init guide
 
+## 说明
+机器人私聊，可以拿到queryId
+机器人群聊，只能通过direct link访问  无法拿到queryId
+![](https://github.com/shadeien/telegramApp/blob/main/img/queryId.png?raw=true)  
+机器人俩面的menu菜单进入，无法拿到queryId
 
 ## 创建机器人
 

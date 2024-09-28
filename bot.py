@@ -22,7 +22,7 @@ turl = "https://t.me/shadeienbot/bigdream"
 url = "https://s3.us-west-2.amazonaws.com/tma-front-dev.cudis.xyz/beanbit/index.html"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    print(str(update))
+    # print(str(update))
     
     message = update.message
     member = message.from_user
@@ -43,7 +43,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Parses the CallbackQuery and updates the message text."""
-    print(str(update))
+    # print(str(update))
     query = update.callback_query
 
     # CallbackQueries need to be answered, even if no notification to the user is needed
@@ -58,7 +58,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Displays info on how to use the bot."""
-    print(str(update))
+    # print(str(update))
 
     post = update.channel_post
     message = post.text
@@ -72,7 +72,7 @@ async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
 
 async def message_handler2(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Displays info on how to use the bot."""
-    print(str(update))
+    # print(str(update))
     message = update.message
     chat_id = message.chat.id
     # print(message.text)
@@ -100,8 +100,9 @@ async def message_handler3(update: Update, context: ContextTypes.DEFAULT_TYPE) -
 
 def main() -> None:
     """Run the bot."""
-    # Create the Application and pass it your bot's token.
-    application = Application.builder().token("7741809313:AAEaAWpy1P_OBPqyLNHrUsoRjbfoPOV8F64").build()
+    # Create the Application and pass it your bot's token.7360876811:AAEZ1202AxhdUs-cxzuUvS09pu0SoNHDE-g
+    # application = Application.builder().token("7741809313:AAEaAWpy1P_OBPqyLNHrUsoRjbfoPOV8F64").build()
+    application = Application.builder().token("7360876811:AAEZ1202AxhdUs-cxzuUvS09pu0SoNHDE-g").build()
 
     application.add_handler(CommandHandler("start", start))
     # application.add_handler(CallbackQueryHandler(button))
